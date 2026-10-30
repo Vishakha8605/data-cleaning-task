@@ -1,9 +1,0 @@
-Area,Action,Reasoning
-Duplicates,Dropped 5 exact duplicate rows,Identical in all columns; keeping first loses nothing
-Headers,Converted column names to snake_case,"Consistent, easy to use in code"
-Categoricals,Trimmed whitespace and applied consistent casing,Prevents the same category appearing under different spellings
-Data types,Converted total_charges_inr to float; 'unknown' -> NaN,Text placeholder blocked numeric analysis
-Data types,Encoded auto_pay and churn as 1/0,Binary flags are easier for analysis and modelling
-Outliers,Replaced 7 inflated monthly_charges_inr values with the median of their subscription type,About 12.5x too high vs plan price and vs total charges / tenure; median is robust
-Missing values,Imputed 10 total_charges_inr as monthly_charges x tenure,Total charges is cumulative billing; ratio to monthly x tenure is about 0.98 in valid rows
-Missing values,"Filled 13 missing region values with ""Unknown""",Nominal category cannot be inferred; avoids fabricating data
